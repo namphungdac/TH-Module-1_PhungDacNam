@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function sumOfListFibonacyx(x) {
+        let a = 0;
+        let b = 1;
+        let sum = 0;
+        if (x < 0 || x % 1 !== 0) {
+            return "Nhập lại số nguyên x >= 0";
+        } else if (x === 0) {
+            return 0;
+        } else {
+            sum = 1;
+            for (let i = 0; ; i++) {
+                let c = a + b;
+                a = b;
+                b = c;
+                if (c <= x) {
+                    sum += c;
+                } else {
+                    break;
+                }
+            }
+            return sum;
+        }
+    }
+
+    let x = 5;
+    document.write(`Dãy Fibonaci là: 0,1,1,2,3,5,8,... <br>`)
+    document.write(`Tổng các số fibonacy từ 0 cho tới ${x} là: ${sumOfListFibonacyx(x)}`);
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findmax(arr) {
+        let max = arr[0];
+        let max2 = 0;
+        for (let i = 1; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+            let arr2 = arr.filter(function (value) {
+                return value !== max;
+            });
+            max2 = arr2[0];
+            for (let j = 0; j < arr2.length; j++) {
+                if (max2 < arr2[j]) {
+                    max2 = arr2[j];
+                }
+            }
+        }
+        return max2;
+    }
+
+    let array = [5, 5, 1, 4, 4, 2, 3, 5,6]
+    document.write(`Mảng điểm là: ${array} <br>`)
+    document.write(`Điểm lớn thứ 2 là ${findmax(array)}`);
+</script>
+</body>
+</html>
